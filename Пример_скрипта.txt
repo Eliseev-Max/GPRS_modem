@@ -1,0 +1,159 @@
+►	AT+CGDCONT?
++CGDCONT: 1,"IP","static.beeline.ru","",0,0
+OK
+
+►	AT#SCFG?		
+OK
+
+►	AT#SGACT = 1,0
+OK
+
+►	AT#SGACT = 1,1
+OK
+
+►	AT#FRWL?
+OK
+
+►	AT#SCFGEXT?
+
+►	AT#SL = 2, 1, 23 		# прослушиваем 23 порт
+
+Send АТ-command: AT#SCFGEXT?
+
+15:28:32 AT+CGDCONT?
+GSM:
++ C G D C O N T : 1 , " I P " , " v p n l . k y i v s t a r . n e t 
+" , " " , 0 , 0
+O K
+
+15:28:36 AT#SCFG?
+GSM:
+# S C F G : 1 , 1 , 1 , 3 0 , 3 0 0 , 1 0 0
+# S C F G : 2 , 1 , 2 0 0 , 3 0 , 3 0 0 , 3 0
+# S C F G : 3 , 1 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+# S C F G : 4 , 2 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+# S C F G : 5 , 2 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+# S C F G : 6 , 2 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+
+O K
+
+
+15:28:49 AT#SGACT = 1,1
+GSM:
+# S G A C T : 1 0 . 5 . 8 . 1 3 0
+O K
+
+
+15:29:05 AT#PING="10.5.8.131"
+GSM:
+# P I N G : 0 1 , " 1 0 . 5 . 8 . 1 3 1 " , 3 5 , 6 3
+# P I N G : 0 2 , " 1 0 . 5 . 8 . 1 3 1 " , 8 , 6 3
+# P I N G : 0 3 , " 1 0 . 5 . 8 . 1 3 1 " , 4 , 6 3
+# P I N G : 0 4 , " 1 0 . 5 . 8 . 1 3 1 " , 5 , 6 3
+
+O K
+
+
+15:34:57 AT#SD=2,0,23,"10.5.8.131",0,0,1
+GSM:
+по истечении времени
+E R R O R
+
+Вот настройки "сервера"
+Send АТ-command: AT+CGDCONT?
++ C G D C O N T : 1 , " I P " , " v p n l . k y i v s t a r . n e t 
+" , " " , 0 , 0
+O K
+
+Send АТ-command: AT#SCFG?
+# S C F G : 1 , 1 , 2 0 0 , 3 0 , 3 0 0 , 3 0
+# S C F G : 2 , 1 , 2 0 0 , 3 0 , 3 0 0 , 3 0
+# S C F G : 3 , 1 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+# S C F G : 4 , 2 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+# S C F G : 5 , 2 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+# S C F G : 6 , 2 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+O K
+
+Send АТ-command: AT#SGACT = 1,0
+O K
+
+Send АТ-command: AT#SGACT = 1,1
+# S G A C T : 1 0 . 5 . 8 . 1 3 1
+O K
+
+Send АТ-command: AT#FRWL?
+O K
+
+Send АТ-command: AT#SCFGEXT?
+
+# S C F G E X T : 1 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 2 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 3 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 4 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 5 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 6 , 0 , 0 , 0 , 0 , 0
+O K
+
+Send АТ-command: AT#SL = 2, 1, 23 прослушиваем 23 порт
+O K 
+
+###########################################################################
+###########################################################################
+###########################################################################
+###########################################################################
+
+
+Вот настройки "сервера"
+Send АТ-command: AT+CGDCONT?
++ C G D C O N T : 1 , " I P " , " v p n l . k y i v s t a r . n e t
+" , " " , 0 , 0
+O K
+
+Send АТ-command: AT#SCFG?
+# S C F G : 1 , 1 , 2 0 0 , 3 0 , 3 0 0 , 3 0
+# S C F G : 2 , 1 , 2 0 0 , 3 0 , 3 0 0 , 3 0
+# S C F G : 3 , 1 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+# S C F G : 4 , 2 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+# S C F G : 5 , 2 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+# S C F G : 6 , 2 , 3 0 0 , 9 0 , 6 0 0 , 5 0
+O K
+    AT#SCFG?
+    #SCFG: 1,1,300,90,600,50
+    #SCFG: 2,1,300,90,600,50
+    #SCFG: 3,1,300,90,600,50
+    #SCFG: 4,2,300,90,600,50
+    #SCFG: 5,2,300,90,600,50
+    #SCFG: 6,2,300,90,600,50
+
+Send АТ-command: AT#SGACT = 1,0
+O K
+
+Send АТ-command: AT#SGACT = 1,1
+# S G A C T : 1 0 . 5 . 8 . 1 3 1
+O K
+
+Send АТ-command: AT#FRWL?
+O K
+
+Send АТ-command: AT#SCFGEXT?
+
+# S C F G E X T : 1 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 2 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 3 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 4 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 5 , 0 , 0 , 0 , 0 , 0
+# S C F G E X T : 6 , 0 , 0 , 0 , 0 , 0
+O K
+    at#scfgext?
+    #SCFGEXT: 1,0,0,0,0,0
+    #SCFGEXT: 2,0,0,0,0,0
+    #SCFGEXT: 3,0,0,0,0,0
+    #SCFGEXT: 4,0,0,0,0,0
+    #SCFGEXT: 5,0,0,0,0,0
+    #SCFGEXT: 6,0,0,0,0,0
+
+        #SCFGEXT:<connId1>,<srMode1>,<dataMode1>,<keepalive1>,<ListenAutoRsp1>,0 <CR><LF>
+        at#scfgext=1,0,0,0,1,0
+
+
+Send АТ-command: AT#SL = 2, 1, 23 прослушиваем 23 порт
