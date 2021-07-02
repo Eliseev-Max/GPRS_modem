@@ -10,6 +10,14 @@ GL865-DUAL-V3.1
 различных диапазонов частот.
 """
 
+
+► AT+CSCA?
+
++CSCA: "+79037011111",145
+
+OK
+
+
 (результат работы команды AT&V):
 
 DTE SPEED                      : 9600
@@ -32,3 +40,29 @@ RI (C125) OPTIONS              : \R1=OFF dur. off-hk
 C108/1 OPERATION               : &D0=NO
 POWER SAVING ON DTR            : +CFUN:1=NO
 DEFAULT PROFILE                : &Y0=user profile 1
+
+
+Заводские настройки
+
+
+DTE SPEED                      : AUTO
+DTE FORMAT                     : AUTO
+GSM DATA MODE                  : Not Transparent
+AUTOBAUD                       : +IPR0=YES
+COMMAND ECHO                   : E1=YES
+RESULT MESSAGES                : Q0=YES
+VERBOSE MESSAGES               : V1=YES
+EXTENDED MESSAGES              : X1=YES
+LINE SPEED                     : F0=autodetect
+CONSTANT DTE SPEED             : YES
+FLOW CONTROL OPTIONS           : &K3=HW bidirect.
+ERROR CORRECTION MODE          : RLP
+CTS (C106) OPTIONS             : &B2=OFF while disc.
+DSR (C107) OPTIONS             : &S3=PHONE ready->ON
+DTR (C108) OPTIONS             : &D0=ignored
+DCD (C109) OPTIONS             : &C1=follows carrier
+RI (C125) OPTIONS              : \R1=OFF dur. off-hk
+C108/1 OPERATION               : &D0=NO
+POWER SAVING ON DTR            : +CFUN:1=NO
+DEFAULT PROFILE                : &P0=user profile 1
+
