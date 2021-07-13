@@ -28,6 +28,9 @@ OK
 ►	AT#SL = 2, 1, 23 		# прослушиваем 23 порт
 
 
+
+
+
 Send АТ-command: AT#SCFGEXT?
 
 15:28:32 AT+CGDCONT?

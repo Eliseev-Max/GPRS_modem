@@ -1,0 +1,396 @@
+at
+
+OK
+at&v
+
+
+DTE SPEED                      : 9600
+DTE FORMAT                     : AUTO
+GSM DATA MODE                  : Not Transparent
+AUTOBAUD                       : +IPRxxx00=NO
+COMMAND ECHO                   : E0=NO
+RESULT MESSAGES                : Q0=YES
+VERBOSE MESSAGES               : V1=YES
+EXTENDED MESSAGES              : X1=YES
+LINE SPEED                     : F0=autodetect
+CONSTANT DTE SPEED             : YES
+FLOW CONTROL OPTIONS           : &K0=NO
+ERROR CORRECTION MODE          : RLP
+CTS (C106) OPTIONS             : &B2=OFF while disc.
+DSR (C107) OPTIONS             : &S3=PHONE ready->ON
+DTR (C108) OPTIONS             : &D0=ignored
+DCD (C109) OPTIONS             : &C1=follows carrier
+RI (C125) OPTIONS              : \R1=OFF dur. off-hk
+C108/1 OPERATION               : &D0=NO
+POWER SAVING ON DTR            : +CFUN:1=NO
+DEFAULT PROFILE                : &Y0=user profile 1
+
+OK
+
+AT+CGDCONT?
+
+[RESPONCE]:		+CGDCONT: 1,"IP","static.beeline.ru","46.16.96.202",0,0
+
+				OK
+at+cgdcont=?
+
+[RESPONCE]:		+CGDCONT: (1-5),"IP",,,(0,1),(0,1)
+				+CGDCONT: (1-5),"IPV6",,,(0,1),(0,1)
+
+				OK
+
+at+cbst?
+
+[RESPONCE]:		+CBST: 0,0,1
+
+				OK
+
+
+at+cops?
+
+[RESPONCE]:		+COPS: 0,0,"Beeline"
+
+at#sgact=2,0
+
+[RESPONCE]:		OK
+
+at#sgact=2,1
+
+[RESPONCE]:		#SGACT: 46.16.96.202
+
+				OK
+
+at#frwl?
+
+[RESPONCE]:		OK
+
+at#frwl=1,"212.23.72.205","255.255.255.0"
+
+[RESPONCE]:		OK
+
+at#frwl?
+
+[RESPONCE]:		#FRWL: "212.023.072.205","255.255.255.000"
+
+				OK
+
+AT#SL=2,1,723
+
+ERROR
+AT#SL?
+
+OK
+AT#SL=1,1,723
+
+ERROR
+AT#SL=1,1,5001
+
+ERROR
+
+AT#SL=1, 1, 5007
+
+ERROR
+AT#scfg?
+
+#SCFG: 1,1,300,90,600,50
+#SCFG: 2,1,300,90,600,50
+#SCFG: 3,1,300,90,600,50
+#SCFG: 4,2,300,90,600,50
+#SCFG: 5,2,300,90,600,50
+#SCFG: 6,2,300,90,600,50
+
+OK
+AT#SCFGEXT?
+
+#SCFGEXT: 1,0,0,0,1,0
+#SCFGEXT: 2,0,0,0,0,0
+#SCFGEXT: 3,0,0,0,0,0
+#SCFGEXT: 4,0,0,0,0,0
+#SCFGEXT: 5,0,0,0,0,0
+#SCFGEXT: 6,0,0,0,0,0
+
+OK
+AT#SCFGEXT=2,0,0,0,1,0
+
+OK
+at#scfgext?
+
+#SCFGEXT: 1,0,0,0,1,0
+#SCFGEXT: 2,0,0,0,1,0
+#SCFGEXT: 3,0,0,0,0,0
+#SCFGEXT: 4,0,0,0,0,0
+#SCFGEXT: 5,0,0,0,0,0
+#SCFGEXT: 6,0,0,0,0,0
+
+OK
+AT#SL=2,1,5007
+
+ERROR
+at#sl=?
+
+#SL: (1-6),(0,1),(1-65535),(0,255)
+
+OK
+AT#SL=2,0,5007
+
+ERROR
+^[OP^[OP
+at
+
+OK
+at
+
+OK
+at#sl=?
+
+#SL: (1-6),(0,1),(1-65535),(0,255)
+
+OK
+at#sl?
+
+OK
+at#sl=1,0,23
+
+ERROR
+at#sl=1,0
+
+ERROR
+at+ceer
+
++CEER: Normal, unspecified
+
+OK
+AT+CEE=1
+
+ERROR
+AT+CEER=?
+
+OK
+^[OP^[OPAT
+
+OK
+ATCEER=?
+
+ERROR
+AT+CEER=?
+
+OK
+AT+CEER=1
+
+ERROR
+AT+CEER
+
++CEER: Normal, unspecified
+
+OK
+^[OPeaet
+ATAT
+
+NO CARRIER
+AT
+
+OK
+AT#CEER
+
+#CEER: 237
+
+OK
+^[OP
+
+
+
+
+
+
+at
+
+OK
+
+at
+
+OK
+at+cgdcont?
+
++CGDCONT: 1,"IP","static.beeline.ru","46.16.96.202",0,0
++CGDCONT: 2,"IP","static.beeline.ru","",0,0
+
+OK
+at+cgdcont=1
+
+OK
+at+cgdcont?
+
++CGDCONT: 2,"IP","static.beeline.ru","",0,0
+
+OK
+at
+
+OK
+at+cgdcont=1
+
+OK
+at+cg
+\
+ERROR
+at+cgdcont?
+
++CGDCONT: 2,"IP","static.beeline.ru","",0,0
+
+OK
+at+cfun=1,1
+
+OK
+^[OP^[OP^[OP^[OP
+
+
+
+at
+X▒M
+
+OK
+ate0
+ate0
+OK
+at
+
+OK
+at+cgdcont?
+
++CGDCONT: 2,"IP","static.beeline.ru","",0,0
+
+OK
+at+cgdcont=2
+
+OK
+at+cgdcont?
+
+OK
+at
+
+OK
+AT+CFUN=1,1
+
+OK
+AT
+AT
+OK
+AT&V
+PU▒▒M
+
+
+DTE SPEED                      : AUTO
+DTE FORMAT                     : AUTO
+GSM DATA MODE                  : Not Transparent
+AUTOBAUD                       : +IPR0=YES
+COMMAND ECHO                   : E1=YES
+RESULT MESSAGES                : Q0=YES
+VERBOSE MESSAGES               : V1=YES
+EXTENDED MESSAGES              : X1=YES
+LINE SPEED                     : F0=autodetect
+CONSTANT DTE SPEED             : YES
+FLOW CONTROL OPTIONS           : &K3=HW bidirect.
+ERROR CORRECTION MODE          : RLP
+CTS (C106) OPTIONS             : &B2=OFF while disc.
+DSR (C107) OPTIONS             : &S3=PHONE ready->ON
+DTR (C108) OPTIONS             : &D0=ignored
+DCD (C109) OPTIONS             : &C1=follows carrier
+RI (C125) OPTIONS              : \R1=OFF dur. off-hk
+C108/1 OPERATION               : &D0=NO
+POWER SAVING ON DTR            : +CFUN:1=NO
+DEFAULT PROFILE                : &Y0=user profile 1
+
+OK
+ATE0
+V▒}_
+
+ERROR
+ATE0
+
+OK
+AT&K0
+
+OK
+AT+IPR=9600
+
+OK
+a
+at+cgdcont?
+
+OK
+AT+CGDCONT=1,"IP","static.beeline.ru"
+
+OK
+at+cgdcont?
+
++CGDCONT: 1,"IP","static.beeline.ru","",0,0
+
+OK
+AT+CGATT?
+
++CGATT: 1
+
+OK
+AT+CGACT?
+
++CGACT: 1,0
+
+OK
+AT#SGACT=1,0
+
+OK
+AT#SGACT=1,1
+
+#SGACT: 46.16.96.202
+
+OK
+AT#FRWL?
+
+OK
+AT#FRWL=?
+
+#FRWL: (0-2)
+
+OK
+AT#SL=1,1,5001
+
+OK
+AT#SL?
+
+#SL: 1,5001,0
+
+OK
+AT#FRWL=1,"212.23.72.205","255.255.255.0"
+
+OK
+AT#FRWL?
+
+#FRWL: "212.023.072.205","255.255.255.000"
+
+OK
+at#sl=1,0,5001
+
+OK
+at#sl?
+
+OK
+AT#SL=1,1,80
+
+OK
+AT#SL?
+
+#SL: 1,80,0
+
+OK
+
+
+
+
+
+
+
+
+654
+
+6253
+2
+
