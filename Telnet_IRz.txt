@@ -240,18 +240,7 @@ OK
 at+cfun=1,1
 
 OK
-^[OP^[OP^[OP^[OP
 
-
-
-at
-X▒M
-
-OK
-ate0
-ate0
-OK
-at
 
 OK
 at+cgdcont?
@@ -269,13 +258,6 @@ at
 
 OK
 AT+CFUN=1,1
-
-OK
-AT
-AT
-OK
-AT&V
-PU▒▒M
 
 
 DTE SPEED                      : AUTO
@@ -300,10 +282,7 @@ POWER SAVING ON DTR            : +CFUN:1=NO
 DEFAULT PROFILE                : &Y0=user profile 1
 
 OK
-ATE0
-V▒}_
 
-ERROR
 ATE0
 
 OK
@@ -313,13 +292,11 @@ OK
 AT+IPR=9600
 
 OK
-a
+
 at+cgdcont?
 
 OK
-AT+CGDCONT=1,"IP","static.beeline.ru"
 
-OK
 at+cgdcont?
 
 +CGDCONT: 1,"IP","static.beeline.ru","",0,0
@@ -367,30 +344,10 @@ AT#FRWL?
 #FRWL: "212.023.072.205","255.255.255.000"
 
 OK
-at#sl=1,0,5001
 
-OK
-at#sl?
-
-OK
-AT#SL=1,1,80
-
-OK
 AT#SL?
 
 #SL: 1,80,0
 
 OK
-
-
-
-
-
-
-
-
-654
-
-6253
-2
 

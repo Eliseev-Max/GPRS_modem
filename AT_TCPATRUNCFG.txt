@@ -1,0 +1,55 @@
+AT#TCPATRUNCFG=	<connId> | <instance> |	<tcpPort> |	<tcpHostPort> |	<tcpHost> |	<urcmode> |	<timeout> |	<authMode> | <retryCnt> | <retryDelay>
+
+Параметры команды:
+
+первый - идентификатор сокета, который будет задействован;
+второй - экземпляр (в модуле интерфейс AT может использовать три экземпляра), который будет выделен для TCPATRUN;
+третий - TCP-порт для прослушивания (используется в режиме сервера);
+четвертый и пятый - соответственно TCP-порт и IP-адрес хоста (для клиентского режима);
+шестой - для включения незапрашиваемых (которые генерируются сами) сообщений о подключении / отключении от сервера;
+седьмой - таймаут для выполнения AT-команды;
+восьмой выбирает режим аутентификации (в режиме сервера);
+девятая - это количество попыток подключения, которое сделает модуль при автоматическом перезапуске сервиса (в клиентском режиме);
+последний - задержка (в минутах) от одной попытки и другой (в клиентском режиме).
+
+AT#SCFG
+AT#SCFG=[SocketConnectionID],[PDPContextID],[PacketSize],[ExchangeTimeout][ConnectionTimeout][DataSendingTimeout]
+
+		[SocketConnectionID]
+		[PDPContextID]			= 0 - определяет GSM-контекст
+		[PacketSize]			размер пакета, используемый стеком TCP/UDP/IP для отправки данных. (300 по умолчанию, [1...1500])
+		[ExchangeTimeout]		тайм-аут неактивности сокета, если за время тайм-аута нет обмена данными, соединение закрывается.
+								0 - нет тайм-аута; [1...65535] - значение тайм-аута в секундах (default 90)
+		[ConnectionTimeout]		тайм-аут соединения, если мы не можем создать соединение с удалённым хостом за время тайм-аута, возбуждается ошибка
+		[DataSendingTimeout]	тайм-аут отправки данных, по истечении этого тайм-аута данные отправляются, даже если их размер меньше максимального размера пакета
+	Transmission Timeout
+	 if the bytes to be sent from the module are less than the packet size, then they will be sent just at Transmission Timeout expiry. 
+	 So in the case of TCPATRUN service, it is suggested to set the minimum Transmission Timeout to avoid waiting for responses.
+	 It is strongly recommended to avoid having it set to infinite. It is also recommended not to set a Packet Size smaller than the default one.
+
+	Если байты, которые должны быть отправлены из модуля, меньше размера пакета, они будут отправлены как раз по истечении времени ожидания передачи.
+	Таким образом, в случае службы TCPATRUN предлагается установить минимальное время ожидания передачи, чтобы избежать ожидания ответов.
+	Настоятельно рекомендуется избегать установки бесконечности. Также рекомендуется не устанавливать размер пакета меньше, чем значение по умолчанию.  
+
+Idle Activity Timeout:
+	if there is no data exchange within the Idle Activity Timeout period, the connection is closed. 
+	This is useful in the following situation: if the TCP/IP socket is closed by the PC in an “unilateral” way,
+	without signal exchange with the other side of the connection, on the module side the connection is still up, but cannot be used anymore.
+	In this situation, if the Idle Activity Timeout has been set locally on the module, it will automatically close the connection,
+	otherwise the only way to close it is using the AT#TCPATRUNCLOSE command locally. 
+	In particular, if the PC closes the connection in the “unilateral” way during a “transparent mode”, see chapter 3.5, there is no way to close locally the TCP ATRUN.
+	So if the user wants to use the “transparent mode”, it is very important to set the Idle Activity Timeout. 
+	After the connection local closure, the TCPATRUN status is still enabled, so the service re-starts automatically.
+	
+	если в течение периода ожидания простоя не происходит обмена данными, соединение закрывается.
+	Это полезно в следующей ситуации:
+		если сокет TCP / IP закрыт ПК «односторонним» способом, без обмена сигналами с другой стороной соединения,
+		на стороне модуля соединение все еще установлено, но не может быть больше использовано.
+	В этой ситуации, если тайм-аут простоя был установлен локально в модуле, он автоматически закроет соединение,
+	в противном случае единственный способ закрыть его - использовать команду  AT#TCPATRUNCLOSE  локально.
+	В частности, если ПК закрывает соединение «односторонним» способом во время «прозрачного режима», см. Главу 3.5, нет возможности локально закрыть TCP ATRUN.
+	Поэтому, если пользователь хочет использовать «прозрачный режим», очень важно установить тайм-аут простоя.
+	После локального закрытия соединения статус TCPATRUN по-прежнему активен, поэтому служба перезапускается автоматически.
+	
+	If  the  TCPATRUN  service,  in  server  or  client  mode,  is  activated  on  the  first instance  (<muxInstance>  =  1  in  AT#TCPATRUNCFG),
+	that  instance  is  only dedicated  to  TCPATRUN  service.  Use  CMUX  (multiplexer)  to  access  the second or third instance and deactivate the service to free the instance, refer to the document: Virtual Serial Device, 80000NT10045A. 
